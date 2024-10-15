@@ -1,0 +1,25 @@
+# IDE
+.idea
+.vscode
+
+# Version control
+.git
+
+# General
+.DS_Store
+
+# Dependency directories
+node_modules/
+
+# cache
+.next
+.swc
+cache
+
+# Logs
+logs
+*.log
+
+# env
+.env*
+!.env

@@ -1,0 +1,40 @@
+{
+  "name": "spin-game-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.29.1",
+    "@types/ioredis": "^5.0.0",
+    "cors": "^2.8.5",
+    "decimal.js": "10.4.3",
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "ioredis": "^5.4.1",
+    "nodemon": "^3.0.2",
+    "pino-http": "^10.0.0",
+    "postgres": "^3.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "pino-pretty": "^11.0.0",
+    "@types/express": "^4.17.21",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4"
+  },
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/index.ts | pino-pretty",
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "prettier": "prettier -w ./",
+    "kaia-start": "run_with_env.sh .env.kaia sh ./spin_game_backend.sh",
+    "aptos-start": "run_with_env.sh .env.aptos sh ./spin_game_backend.sh"
+  }
+}

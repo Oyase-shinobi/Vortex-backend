@@ -1,0 +1,34 @@
+services:
+  spin-game-aptos-backend:
+    image: brighter/spin-game-aptos-backend
+    container_name: spin-game-aptos-backend
+    restart: always
+    ports:
+      - '8082:8082'
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      - NODE_ENV
+      - PORT
+      - HOST
+      - CORS_ORIGIN
+      - COMMON_RATE_LIMIT_WINDOW_MS
+      - COMMON_RATE_LIMIT_MAX_REQUESTS
+      - PGDATABASE
+      - PGHOST
+      - PGPORT
+      - PGUSER
+      - PGPASSWORD
+      - PGPASSWORD_FOR_DIFF
+      - PGSSLMODE
+      - CONTRACT_ADDRESS
+      - NETWORK_URL
+      - WALLET_KEY
+      - VRF_CONTRACT_ADDRESS
+      - MODULE_NAME
+
+networks:
+  default:
+    name: brighter-network
+    external: true

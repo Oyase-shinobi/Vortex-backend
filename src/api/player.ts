@@ -44,7 +44,8 @@ router.get(`/player/future/:address/:round`, async (req, res, next) => {
     Number(round),
   );
 
-  const futureEntryCount = futureEntryList.length;
+  const futureEntryCount = new Set(futureEntryList.map((item) => item.round))
+    .size;
   const futureEntryTotal = futureEntryList.reduce((accum, item) => {
     return (accum += Number(item.player_entry));
   }, 0);

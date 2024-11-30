@@ -8,7 +8,7 @@ import VortexModule from '../utils/chain/VortexModule';
 import ColorHelper from '../utils/helpers/ColorHelper';
 
 const router = express.Router();
-                          
+
 router.get(`/game/status`, async (req, res, next) => {
   const now = Date.now();
   const gameStatusFromCache = Cache.get(CacheKey.gameStatus);
